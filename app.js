@@ -1,6 +1,6 @@
-const SHEET_ID = '1-kDCASxS6zj9NdTlhhy0-eZ-yVjnO5TgnapHYRP0rPw';
-const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
-const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+const SHEET_ID = '1z4JujFG6nDiWjo3utN-XZhniuyFBHgs__OCxXVRyJNM';
+const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=ชีต1`;
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0o24yk11FtP9blhjWJpWlRKD3_CTJicTUAbKnAnEIAdeZ35eBqMh8cIU3ZWnLzQWrBQ/exec';
 let chart;
 
 function showView(id, btn){
