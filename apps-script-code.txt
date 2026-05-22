@@ -1,0 +1,18 @@
+// ใช้สำหรับเขียนข้อมูลจากแอปกลับเข้า Google Sheets
+// วิธีใช้: เปิด Google Sheets > Extensions > Apps Script > วางโค้ดนี้ > Deploy เป็น Web App
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('ชีต1');
+  const data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    new Date(),
+    data.supervisor || '',
+    data.subject || '',
+    data.classLevel || '',
+    data.date || '',
+    data.learning || '',
+    data.student || '',
+    data.innovation || '',
+    data.comment || ''
+  ]);
+  return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON);
+}
