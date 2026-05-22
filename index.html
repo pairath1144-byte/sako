@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B4BB3" />
+  <title>ระบบนิเทศออนไลน์ โรงเรียนบ้านสากอ</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--blue:#0B4BB3;--blue2:#0F7BFF;--gold:#FFD166;--bg:#EEF4FF;--card:#fff;--text:#13233A;--muted:#667085;--line:#D9E4F5;--ok:#079455;--danger:#D92D20;}
+    *{box-sizing:border-box} body{margin:0;font-family:Prompt,system-ui,sans-serif;background:var(--bg);color:var(--text);padding-bottom:92px}.app{max-width:560px;margin:0 auto;min-height:100vh;background:linear-gradient(180deg,#EAF2FF 0,#F7FAFF 45%,#EEF4FF 100%)}
+    .hero{padding:20px 16px 26px;color:#fff;background:radial-gradient(circle at 15% 12%,rgba(255,209,102,.45),transparent 25%),linear-gradient(135deg,#06327A,#0F7BFF);border-radius:0 0 30px 30px;box-shadow:0 14px 32px rgba(13,84,181,.25)}
+    .hero-top{display:flex;align-items:center;gap:14px}.logo{width:68px;height:68px;border-radius:18px;object-fit:cover;background:#fff;border:3px solid rgba(255,255,255,.7)}.title h1{font-size:22px;line-height:1.15;margin:0;font-weight:700}.title p{margin:5px 0 0;font-size:13px;opacity:.9}.pill{display:inline-flex;align-items:center;gap:6px;margin-top:15px;padding:8px 12px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);border-radius:999px;font-size:13px}.wrap{padding:16px}.card{background:var(--card);border:1px solid rgba(217,228,245,.75);border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 10px 26px rgba(16,24,40,.08)}
+    .profile{display:flex;align-items:center;gap:12px}.avatar{width:64px;height:64px;border-radius:20px;object-fit:cover}.profile h2{font-size:17px;margin:0}.small{font-size:12.5px;color:var(--muted);margin-top:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:16px;border-radius:20px;background:linear-gradient(180deg,#F4F8FF,#EAF2FF);border:1px solid #DFEAFF}.stat .label{font-size:12px;color:var(--muted)}.stat .num{font-size:28px;font-weight:700;margin-top:4px;color:var(--blue)}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.section-title h3{margin:0;font-size:17px}.refresh{font-size:12px;color:var(--blue);border:0;background:#EAF2FF;border-radius:999px;padding:7px 10px}label{display:block;font-size:13px;font-weight:600;margin:8px 0 6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 13px;font:inherit;font-size:14px;background:#fff;outline:none}textarea{resize:vertical;min-height:92px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{width:100%;border:0;border-radius:16px;padding:14px 16px;font:inherit;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue2));box-shadow:0 10px 20px rgba(15,123,255,.25)}.btn.secondary{background:#EEF4FF;color:var(--blue);box-shadow:none}.notice{border-radius:16px;padding:12px 13px;background:#FFF8E6;border:1px solid #FFE4A3;color:#7A4B00;font-size:13px}.list{display:flex;flex-direction:column;gap:10px}.item{padding:12px;border:1px solid var(--line);border-radius:16px;background:#FAFCFF}.item b{font-size:14px}.item span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.tabs{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(528px,calc(100% - 24px));display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;padding:8px;box-shadow:0 16px 36px rgba(16,24,40,.16)}.tab{border:0;background:transparent;border-radius:16px;padding:9px 4px;color:var(--muted);font:inherit;font-size:11.5px}.tab.active{background:#EAF2FF;color:var(--blue);font-weight:700}.view{display:none}.view.active{display:block}.preview{width:100%;border-radius:18px;border:1px solid var(--line)}.badge{display:inline-block;padding:4px 9px;border-radius:999px;background:#ECFDF3;color:#067647;font-size:12px}.empty{color:var(--muted);font-size:13px;text-align:center;padding:14px}.footer-note{font-size:12px;color:var(--muted);line-height:1.6}
+    @media(min-width:700px){body{padding:20px 0 96px}.app{border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(16,24,40,.15)}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="hero-top"><img class="logo" src="assets/logo.jpeg" alt="logo"><div class="title"><h1>ระบบนิเทศออนไลน์</h1><p>โรงเรียนบ้านสากอ · Smart Supervision</p></div></div>
+    <div class="pill">📱 Mobile Responsive · 📊 Dashboard · 🔗 Google Sheets</div>
+  </header>
+
+  <main class="wrap">
+    <section id="dashboard" class="view active">
+      <div class="card profile"><img class="avatar" src="assets/profile-1.jpeg" alt="profile"><div><h2>Dashboard ผู้บริหาร</h2><div class="small">ติดตามผลการนิเทศแบบเรียลไทม์</div><div class="badge">พร้อมใช้งานบนมือถือ</div></div></div>
+      <div class="grid"><div class="stat"><div class="label">จำนวนการนิเทศ</div><div id="totalCount" class="num">0</div></div><div class="stat"><div class="label">คะแนนเฉลี่ย</div><div id="avgScore" class="num">0.00</div></div></div>
+      <div class="card"><div class="section-title"><h3>คะแนนเฉลี่ยรายวิชา</h3><button class="refresh" onclick="loadSheetData()">รีเฟรช</button></div><canvas id="subjectChart"></canvas></div>
+      <div class="card"><div class="section-title"><h3>ผลการนิเทศล่าสุด</h3></div><div id="latestList" class="list"><div class="empty">ยังไม่มีข้อมูล หรือยังไม่ได้เผยแพร่ Sheet เป็น CSV</div></div></div>
+      <div class="card"><img class="preview" src="assets/dashboard-preview.png" alt="dashboard preview"></div>
+    </section>
+
+    <section id="form" class="view">
+      <div class="card"><h3 style="margin-top:0">แบบบันทึกการนิเทศ</h3><div class="notice">ก่อนใช้งานจริง ให้นำ Web App URL จาก Google Apps Script ไปใส่ในไฟล์ <b>app.js</b> ตรงตัวแปร <b>APPS_SCRIPT_URL</b></div>
+        <label>ชื่อผู้นิเทศ</label><input id="supervisor" placeholder="เช่น ผอ.ไพรัช บินเสะ">
+        <label>ชื่อผู้รับการนิเทศ</label><input id="teacher" placeholder="ชื่อครูผู้รับการนิเทศ">
+        <div class="row"><div><label>วิชา</label><input id="subject" placeholder="คณิตศาสตร์"></div><div><label>ชั้น</label><select id="grade"><option value="">เลือกชั้น</option><option>อนุบาล 1</option><option>อนุบาล 2</option><option>อนุบาล 3</option><option>ป.1</option><option>ป.2</option><option>ป.3</option><option>ป.4</option><option>ป.5</option><option>ป.6</option><option>ม.1</option><option>ม.2</option><option>ม.3</option></select></div></div>
+        <div class="row"><div><label>วันที่นิเทศ</label><input id="date" type="date"></div><div><label>คะแนน</label><select id="score"><option value="">เลือกคะแนน</option><option value="5">5 ดีเยี่ยม</option><option value="4">4 ดีมาก</option><option value="3">3 ดี</option><option value="2">2 พอใช้</option><option value="1">1 ควรปรับปรุง</option></select></div></div>
+        <label>ความคิดเห็น</label><textarea id="comment" placeholder="จุดเด่นในการจัดการเรียนรู้"></textarea>
+        <label>ข้อเสนอแนะ</label><textarea id="suggestion" placeholder="แนวทางพัฒนา / สิ่งที่ควรติดตาม"></textarea>
+        <button class="btn" onclick="submitForm()">บันทึกข้อมูล</button>
+      </div>
+    </section>
+
+    <section id="assessment" class="view">
+      <div class="card"><h3 style="margin-top:0">หัวข้อประเมินการนิเทศ</h3><div class="list"><div class="item"><b>1. การเตรียมแผนการจัดการเรียนรู้</b><span>ความชัดเจนของจุดประสงค์ กิจกรรม และการวัดผล</span></div><div class="item"><b>2. การจัดกิจกรรม Active Learning</b><span>ผู้เรียนมีส่วนร่วม คิด ลงมือทำ และสะท้อนผล</span></div><div class="item"><b>3. การใช้สื่อและเทคโนโลยี</b><span>ใช้สื่อเหมาะสม ดึงดูด และเชื่อมโยงบริบทนักเรียน</span></div><div class="item"><b>4. การบริหารชั้นเรียน</b><span>บรรยากาศปลอดภัย มีวินัย และส่งเสริมการเรียนรู้</span></div><div class="item"><b>5. การวัดและประเมินผล</b><span>มีเครื่องมือ วัดตรงจุด และนำผลไปพัฒนา</span></div></div></div>
+    </section>
+
+    <section id="setting" class="view">
+      <div class="card profile"><img class="avatar" src="assets/profile-2.jpeg" alt="profile"><div><h2>ตั้งค่าการเชื่อมต่อ</h2><div class="small">Google Sheets ID ถูกเตรียมไว้แล้ว</div></div></div>
+      <div class="card"><h3 style="margin-top:0">Google Sheet</h3><p class="footer-note">Sheet ID: <b>1-kDCASxS6zj9NdTlhhy0-eZ-yVjnO5TgnapHYRP0rPw</b><br>ระบบอ่านข้อมูลจาก CSV และบันทึกผ่าน Google Apps Script</p><button class="btn secondary" onclick="loadSheetData()">ทดสอบโหลดข้อมูล</button></div>
+      <div class="card"><h3 style="margin-top:0">การติดตั้งบนมือถือ</h3><p class="footer-note">เปิดไฟล์ผ่านเว็บโฮสติ้ง เช่น GitHub Pages / Netlify / Firebase Hosting แล้วกด “Add to Home Screen” บนมือถือ จะใช้งานเหมือนแอปได้เลย</p></div>
+    </section>
+  </main>
+</div>
+
+<nav class="tabs">
+  <button class="tab active" onclick="showView('dashboard',this)">แดชบอร์ด</button>
+  <button class="tab" onclick="showView('form',this)">บันทึก</button>
+  <button class="tab" onclick="showView('assessment',this)">ประเมิน</button>
+  <button class="tab" onclick="showView('setting',this)">ตั้งค่า</button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
